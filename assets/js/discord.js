@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const userId = "951169964834947072"; // Replace with your hardcoded user ID
+    const userId = "1328008987911913635"; // Replace with your hardcoded user ID
     const apiUrl = `https://discord-lookup-api-alpha.vercel.app/v1/user/${userId}`;
 
     // Elements
