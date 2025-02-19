@@ -208,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Function to generate ASCII art
   function getAsciiArt() {
       return `
+
 ────(♥)(♥)(♥)────(♥)(♥)(♥) ɪƒ ƴσυ'ʀє αʟσηє,
 ──(♥)██████(♥)(♥)█████(♥) ɪ'ʟʟ ɓє ƴσυʀ ѕɧα∂σѡ.
 ─(♥)████████(♥)████████(♥) ɪƒ ƴσυ ѡαηт тσ cʀƴ,
@@ -218,6 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
 ────────(♥)█████(♥) ɪ'ʟʟ ɓє ƴσυʀ ѕɱɪʟє.
 ─────────(♥)██(♥) ɓυт αηƴтɪɱє ƴσυ ηєє∂ α ƒʀɪєη∂,
 ───────────(♥) ɪ'ʟʟ ʝυѕт ɓє ɱє.               
+ 
   `;
   }
 
