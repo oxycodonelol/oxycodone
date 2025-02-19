@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Website Title</title>
+<link rel="stylesheet" type="text/css" href="styles.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="icon" type="image/x-icon" href="./assets/favico/default.ico">
+</head>
+<body class="custom-cursor">
+  <!-- Black Background Overlay -->
+  <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: black; z-index: 998;"></div>
+
+  <!-- Terminal Window -->
+  <div id="terminal" class="custom-cursor">
+    <div id="terminal-header">
+      <div id="terminal-buttons">
+        <!-- Terminal Control Buttons -->
+        <div class="terminal-button" id="close-button"></div> <!-- Close button -->
+        <div class="terminal-button" id="minimize-button"></div> <!-- Minimize button -->
+        <div class="terminal-button" id="maximize-button"></div> <!-- Maximize button -->
+      </div>
+    </div>
+    <div id="terminal-content">
+      <p id="terminal-text"></p> <!-- Terminal text content -->
+    </div>
+  </div>
+
+  <!-- Background Elements -->
+  <div id="video-background">
+    <video autoplay muted loop id="myVideo"> <!-- Video background -->
+      <source src="./assets/back/default.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div id="audio-background">
+      <audio autoplay loop id="myAudio"> <!-- Audio background -->
+        <source src="./assets/music/default.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div id="blurred-box">
+      <img id="profile-picture" src="./assets/pfp/default.jpg" alt="Profile Picture">
+      <img id="avatar-frame" src="" alt="Avatar Frame">
+      <p id="username" style="color: white; font-weight: bold; font-size: large;">xqyet</p>
+      <!-- User Description -->
+      <div class="user-description">
+          <p id="user-description" style="color: white;" class="glow">DEVELOPER </p>
+
+
+      </div>
+      <!-- Links -->
+      <div class="links">
+        <a href="https://soundcloud.com/xqyet" target="_blank">
+          <i class="fab fa-soundcloud"></i>
+        </a> 
+        <a href="https://github.com/xqyet" target="_blank">
+          <i class="fab fa-github"></i> 
+        </a> 
+      </div>
+    </div>
+  </div>
+  <script>
+      function fadeOutOverlay() {
+          var overlay = document.getElementById('overlay');
+          overlay.style.opacity = '0'; // Set opacity to 0 to trigger fade out
+          setTimeout(function () {
+              overlay.style.display = 'none'; // Fully hide the overlay after the transition
+          }, 500); // Wait for the transition to complete (500 ms)
+      }
+
+      document.getElementById('close-button').addEventListener('click', function () {
+          document.getElementById('terminal').style.display = 'none'; // Hide terminal
+          fadeOutOverlay(); // Use fade out function
+      });
+
+      // Example of handling additional conditions (like left click after prompt completion)
+      document.getElementById('terminal').addEventListener('click', function () {
+          fadeOutOverlay(); // You might need logic to check if the prompt is completed
+          // Consider adding a check to only trigger this if the terminal operations are complete
+      });
+      document.addEventListener('DOMContentLoaded', function () {
+          var terminalContainer = document.getElementById('terminal');
+          var closeButton = document.getElementById('close-button');
+          var overlay = document.getElementById('overlay');
+
+          // Function to fade out overlay
+          function fadeOutOverlay() {
+              overlay.style.opacity = '0';
+              setTimeout(function () {
+                  overlay.style.display = 'none';
+              }, 500); // Timing for fade-out effect
+          }
+
+          // Initially disable clicks on the terminal to fade out the overlay
+          function enableTerminalClick() {
+              terminalContainer.addEventListener('click', fadeOutOverlay);
+          }
+
+          // Delay enabling the terminal click event to fade out overlay
+          setTimeout(enableTerminalClick, 6000); // Enable click after 6 seconds
+
+          // Close button functionality
+          closeButton.addEventListener('click', function () {
+              terminalContainer.style.display = 'none';
+              fadeOutOverlay();
+          });
+
+          // Additional initialization and event handlers might go here
+      });
+
+
+
+  </script>
+  <script src="./assets/js/script.js"></script> <!-- Script for functionality -->
+  <script src="./assets/js/title.js"></script> <!-- Script for title functionality -->
+  <script src="./assets/js/discord.js"></script> <!-- Script for discord functionality -->
+</body>
+</html>
